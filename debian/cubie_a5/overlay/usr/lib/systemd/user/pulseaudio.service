@@ -1,0 +1,9 @@
+[Unit]
+Description=pulseaudio
+After=syslog.target
+
+[Service]
+ExecStart=/usr/bin/pulseaudio --daemonize=no --exit-idle-time=-1 -v --log-target=file:/tmp/pulse.log
+
+[Install]
+WantedBy=default.target
