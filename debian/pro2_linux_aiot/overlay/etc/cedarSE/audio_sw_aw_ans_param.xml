@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audio_sw_aw_ans_param version="2.10.0-later">
+  <param_tree>
+    <param path="Speaker" param_id="0" enable="0"/>
+    <param path="Hpout"   param_id="1" enable="0"/>
+    <param path="MIC"     param_id="2" enable="0"/>
+  </param_tree>
+  <param_unit_pool>
+    <param_unit param_id="0">
+      <!-- param note -->
+      <!-- ns_type: stationary, low_nostationary, medium_nostationary, high_nostationary -->
+      <!-- overlap: 50, 75 -->
+      <param name="ns_type" value="high_nostationary"/>
+      <param name="ns_db" value="-50"/>
+      <param name="overlap" value="75"/>
+    </param_unit>
+    <param_unit param_id="1">
+      <param name="ns_type" value="high_nostationary"/>
+      <param name="ns_db" value="-50"/>
+      <param name="overlap" value="75"/>
+    </param_unit>
+    <param_unit param_id="2">
+      <param name="ns_type" value="high_nostationary"/>
+      <param name="ns_db" value="-50"/>
+      <param name="overlap" value="75"/>
+    </param_unit>
+  </param_unit_pool>
+</audio_sw_aw_ans_param>

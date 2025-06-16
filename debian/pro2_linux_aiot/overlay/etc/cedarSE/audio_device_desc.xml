@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audio_device_desc version="2.26.0-later">
+    <platform_info>
+        <platform name="A527" board="all" kernel_version="linux5.15"/>
+        <hwsfx base="0xF0" size="0x2BC"/>
+        <!-- <rpsfx controller_id="0" rpbuf_platio_size="1024" rpbuf_subio_size="8224"/> -->
+        <dump dirpath="/data/vendor/hardware/audio_d/"/>
+    </platform_info>
+
+    <platform_devices>
+        <!-- device config
+        start_fade={n}     : start fade-in duration({n}ms), default 0
+        setup_gap_time={n} : setup param cycle {n}ms(except sync method), default 100
+        setup_fade_time={n}: setup param fade duration {n}ms, default 100
+        dump_time=1        : dump running time of all plugin of the audio device
+        e.g. play_device type="Speaker" start_fade="40" setup_gap_time="100" setup_fade_time="50" dump_time="1"
+        -->
+        <play_device type="Speaker">
+            <sw_effect sw="EQ"/>
+            <hw_effect hw="HW_DRC"/>
+            <!-- <hw_effect hw="HW_HPF"/> -->
+
+            <!-- support effect list
+            <sw_effect sw="EQ"/>
+            <sw_effect sw="RTC_AGC"/>
+            <sw_effect sw="RTC_ANS"/>
+            <sw_effect sw="RTC_AEC"/>
+            <sw_effect sw="AW_ANS"/>
+            <sw_effect sw="PASS_FILTER"/>
+            <sw_effect sw="SURROUND"/>
+            <sw_effect sw="ROUTE"/>
+            <sw_effect sw="DELAY"/>
+            <sw_effect sw="VOLUME"/>
+            <sw_effect sw="INVERTER"/>
+            <hw_effect hw="HW_DRC"/>
+            <hw_effect hw="HW_HPF"/>
+            <rp_effect rp="RP_EQ"/>
+            <rp_effect rp="RP_PASS_FILTER"/>
+            <rp_effect rp="RP_RTC_AGC"/>
+            <rp_effect rp="RP_RTC_ANS"/>
+            <rp_effect rp="RP_RTC_AEC"/>
+            <rp_effect rp="RP_SURROUND"/>
+            -->
+
+            <!-- ap config
+            sub_id={n}: ap sub id, default 0
+            param_set_method={n}: 0-sync, 1-fade, 2-gap, default 0
+            dump_pcm_cnt={n}: maximum of pcm loop save files after ap process, default 0
+
+            e.g.1 multiple effect use
+            <sw_effect sw="xxx"/>
+            <rp_effect rp="xxx"/>
+            <sw_effect sw="xxx"/>
+            <hw_effect hw="xxx"/>
+
+            e.g.2 single device reuse effect
+            <sw_effect sw="VOLUME" sub_id="0"/>
+            <sw_effect sw="VOLUME" sub_id="1"/>
+
+            e.g.3 dump specified effect data, dump_pcm_cnt should > 0
+            <sw_effect sw="xxx" dump_pcm_cnt="3"/>
+            <sw_effect sw="VOLUME" sub_id="0" dump_pcm_cnt="1"/>
+            <sw_effect sw="VOLUME" sub_id="1"/>
+
+            e.g.4 add fade, 1-open, 0-close, default set 0
+            <sw_effect sw="xxx" param_set_method="1"/>
+            <sw_effect sw="VOLUME" sub_id="0" param_set_method="0"/>
+            <sw_effect sw="VOLUME" sub_id="1"/>
+            -->
+        </play_device>
+        <play_device type="Hpout">
+        </play_device>
+        <cap_device type="MIC">
+        </cap_device>
+        <cap_device type="MIC_PHONE">
+        </cap_device>
+        <cap_device type="MIC_PHONE_AEC">
+        </cap_device>
+    </platform_devices>
+
+    <!-- custom effext parameter file path.
+    <effect_pool>
+        <effect_unit effect_name="RTC_AGC">
+            <param name="param_path" value="./config/audio_sw_rtc_agc_param.xml"/>
+        </effect_unit>
+        <effect_unit effect_name="EQ">
+            <param name="param_path" value="./config/audio_sw_eq_param.xml"/>
+        </effect_unit>
+    </effect_pool/>
+    -->
+</audio_device_desc>

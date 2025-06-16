@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audio_rp_fd_proc_param version="2.10.0-later">
+  <param_tree>
+    <param path="Speaker" param_id="0" enable="0"/>
+  </param_tree>
+  <param_unit_pool>
+    <param_unit param_id="0">
+      <param name="frame_cnt" value="4096"/>
+    </param_unit>
+  </param_unit_pool>
+</audio_rp_fd_proc_param>
