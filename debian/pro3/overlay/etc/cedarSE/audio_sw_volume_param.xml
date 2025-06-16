@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audio_sw_volume_param version="2.10.0-later">
+  <param_tree>
+    <param path="Speaker" sub_id="0" param_id="0" enable="0"/>
+    <param path="Speaker" sub_id="1" param_id="1" enable="0"/>
+    <param path="Hpout"              param_id="2" enable="0"/>
+    <param path="MIC"     sub_id="1" param_id="3" enable="0"/>
+    <param path="MIC"     sub_id="0" param_id="4" enable="0"/>
+    <param path="MIC_PHONE"          param_id="5" enable="0"/>
+    <param path="MIC_PHONE_AEC"      param_id="6" enable="0"/>
+  </param_tree>
+  <param_unit_pool>
+    <param_unit param_id="0">
+      <param name="dB_max" value="0"/>
+      <param name="dB_min" value="-80"/>
+      <param name="level_max" value="100"/>
+      <param name="level_min" value="0"/>
+      <param name="ch_cnt" value="2"/>
+      <param name="ch_volume_0" value="100"/>
+      <param name="ch_volume_1" value="100"/>
+    </param_unit>
+    <param_unit param_id="1">
+      <param name="dB_max" value="0"/>
+      <param name="dB_min" value="-80"/>
+      <param name="level_max" value="100"/>
+      <param name="level_min" value="0"/>
+      <param name="ch_cnt" value="2"/>
+      <param name="ch_volume_0" value="100"/>
+      <param name="ch_volume_1" value="100"/>
+    </param_unit>
+    <param_unit param_id="2">
+      <param name="dB_max" value="0"/>
+      <param name="dB_min" value="-80"/>
+      <param name="level_max" value="100"/>
+      <param name="level_min" value="0"/>
+      <param name="ch_cnt" value="2"/>
+      <param name="ch_volume_0" value="100"/>
+      <param name="ch_volume_1" value="100"/>
+    </param_unit>
+    <param_unit param_id="3">
+      <param name="dB_max" value="0"/>
+      <param name="dB_min" value="-80"/>
+      <param name="level_max" value="100"/>
+      <param name="level_min" value="0"/>
+      <param name="ch_cnt" value="2"/>
+      <param name="ch_volume_0" value="100"/>
+      <param name="ch_volume_1" value="100"/>
+    </param_unit>
+    <param_unit param_id="4">
+      <param name="dB_max" value="0"/>
+      <param name="dB_min" value="-80"/>
+      <param name="level_max" value="100"/>
+      <param name="level_min" value="0"/>
+      <param name="ch_cnt" value="2"/>
+      <param name="ch_volume_0" value="100"/>
+      <param name="ch_volume_1" value="100"/>
+    </param_unit>
+    <param_unit param_id="5">
+      <param name="dB_max" value="0"/>
+      <param name="dB_min" value="-80"/>
+      <param name="level_max" value="100"/>
+      <param name="level_min" value="0"/>
+      <param name="ch_cnt" value="2"/>
+      <param name="ch_volume_0" value="100"/>
+      <param name="ch_volume_1" value="100"/>
+    </param_unit>
+    <param_unit param_id="6">
+      <param name="dB_max" value="0"/>
+      <param name="dB_min" value="-80"/>
+      <param name="level_max" value="100"/>
+      <param name="level_min" value="0"/>
+      <param name="ch_cnt" value="2"/>
+      <param name="ch_volume_0" value="100"/>
+      <param name="ch_volume_1" value="100"/>
+    </param_unit>
+  </param_unit_pool>
+</audio_sw_volume_param>

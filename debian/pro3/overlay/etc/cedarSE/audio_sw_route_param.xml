@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audio_sw_route_param version="2.10.0-later">
+  <param_tree>
+    <param path="Speaker" param_id="0" enable="0"/>
+    <param path="MIC"     param_id="1" enable="0"/>
+  </param_tree>
+  <param_unit_pool>
+    <param_unit param_id="0">
+      <!-- mixer_mode: linear, adaptive -->
+      <param name="mixer_mode" value="linear"/>
+      <param name="frame_max" value="4096"/>
+      <param name="sch_cnt" value="2"/>
+      <param name="dch_cnt" value="2"/>
+      <!-- value :"-1" or "" mean silence -->
+      <param name="dch_map0" value="0"/>
+      <param name="dch_map1" value="1"/>
+    </param_unit>
+    <param_unit param_id="1">
+      <!-- mixer_mode: linear, adaptive -->
+      <param name="mixer_mode" value="linear"/>
+      <param name="frame_max" value="4096"/>
+      <param name="sch_cnt" value="2"/>
+      <param name="dch_cnt" value="4"/>
+      <param name="dch_map0" value="0,1"/>
+      <param name="dch_map1" value="1,1"/>
+      <param name="dch_map2" value="-1"/>
+      <param name="dch_map3" value="1"/>
+    </param_unit>
+  </param_unit_pool>
+</audio_sw_route_param>

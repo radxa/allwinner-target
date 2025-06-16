@@ -1,0 +1,198 @@
+software =
+{
+    version = "0.1.0";
+    description = "Firmware update";
+
+    stable = {
+
+        /*------------------------- For emmc ---------------------------- */
+        /* upgrade recovery, uboot, boot0 ==> change swu_mode, boot_partition ==> reboot */
+        upgrade_recovery_emmc = {
+            /* upgrade recovery */
+            images: (
+                {
+                    filename = "recovery";
+                    device = "/dev/by-name/recovery";
+                    installed-directly = true;
+                },
+                {
+                    filename = "uboot";
+                    type = "awuboot";
+                },
+                {
+                    filename = "boot0_emmc";
+                    type = "awboot0";
+                }
+            );
+
+            bootenv: (
+                {
+                    name = "swu_mode";
+                    value = "upgrade_system_emmc";
+                },
+                {
+                    name = "boot_partition";
+                    value = "recovery";
+                },
+                {
+                    name = "swu_next";
+                    value = "reboot";
+                }
+            );
+        }
+
+        /*------------------------- For Rawnand ---------------------------- */
+        upgrade_recovery_rawnand = {
+            /* upgrade recovery */
+            images: (
+                {
+                    filename = "recovery";
+                    device = "/dev/by-name/recovery";
+                    installed-directly = true;
+                },
+                {
+                    filename = "uboot";
+                    type = "awuboot";
+                },
+                {
+                    filename = "boot0_nand";
+                    type = "awboot0";
+                }
+            );
+
+            bootenv: (
+                {
+                    name = "swu_mode";
+                    value = "upgrade_system_emmc";
+                },
+                {
+                    name = "boot_partition";
+                    value = "recovery";
+                },
+                {
+                    name = "swu_next";
+                    value = "reboot";
+                }
+            );
+        }
+
+        upgrade_system_emmc = {
+            /* upgrade kernel,rootfs */
+            images: (
+                {
+                    filename = "kernel";
+                    device = "/dev/by-name/boot";
+                    installed-directly = true;
+                },
+                {
+                    filename = "rootfs";
+                    device = "/dev/by-name/rootfs";
+                    installed-directly = true;
+                }
+            );
+
+            bootenv: (
+                {
+                    name = "swu_mode";
+                    value = "";
+                },
+                {
+                    name = "boot_partition";
+                    value = "boot";
+                },
+                {
+                    name = "swu_next";
+                    value = "reboot";
+                }
+            );
+        }
+
+        /*------------------------- For Ubinand ---------------------------- */
+        upgrade_recovery_ubinand = {
+            /* upgrade recovery */
+            images: (
+                {
+                    filename = "recovery";
+                    volume = "recovery"
+                    installed-directly = true;
+                },
+                {
+                    filename = "uboot";
+                    type = "awuboot";
+                },
+                {
+                    filename = "boot0_nand";
+                    type = "awboot0";
+                }
+            );
+
+            bootenv: (
+                {
+                    name = "swu_mode";
+                    value = "upgrade_system_nand";
+                },
+                {
+                    name = "boot_partition";
+                    value = "recovery";
+                },
+                {
+                    name = "swu_next";
+                    value = "reboot";
+                }
+            );
+        };
+
+        /* upgrade kernel, rootfs ==> change swu_mode */
+        upgrade_system_nand = {
+            /* upgrade kernel,rootfs */
+            images: (
+                {
+                    filename = "kernel";
+                    volume = "boot"
+                    installed-directly = true;
+                },
+                {
+                    filename = "rootfs";
+                    volume = "rootfs"
+                    installed-directly = true;
+                }
+            );
+
+            bootenv: (
+                {
+                    name = "swu_mode";
+                    value = "";
+                },
+                {
+                    name = "boot_partition";
+                    value = "boot";
+                },
+                {
+                    name = "swu_next";
+                    value = "reboot";
+                }
+            );
+        };
+    }
+
+    /* when not call with -e xxx,xxx    just clean */
+    bootenv: (
+        {
+            name = "swu_param";
+            value = "";
+        },
+        {
+            name = "swu_software";
+            value = "";
+        },
+        {
+            name = "swu_mode";
+            value = "";
+        },
+        {
+            name = "swu_version";
+            value = "";
+        }
+    );
+
+}

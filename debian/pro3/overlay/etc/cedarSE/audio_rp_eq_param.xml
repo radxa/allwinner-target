@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audio_rp_eq_param version="2.10.0-later">
+  <param_tree>
+    <param path="Speaker" sub_id="0" param_id="0" enable="0"/>
+    <!-- classic -->
+    <param path="Speaker" sub_id="1" param_id="1" enable="0"/>
+    <!-- flat -->
+    <param path="Speaker" sub_id="2" param_id="2" enable="0"/>
+    <!-- jazz -->
+    <param path="Speaker" sub_id="3" param_id="3" enable="0"/>
+    <!-- pop -->
+    <param path="Speaker" sub_id="4" param_id="4" enable="0"/>
+    <!-- rock -->
+    <param path="Speaker" sub_id="5" param_id="5" enable="0"/>
+    <param path="MIC"                param_id="6" enable="0"/>
+  </param_tree>
+  <param_unit_pool>
+    <param_unit param_id="0">
+      <!-- set "1" then use diffrent param per channel -->
+      <param name="diff_param" value="0"/>
+      <param name="channels" value="2"/>
+      <param name="bin_num" value="2"/>
+      <param name="samplerate" value="48000"/>
+      <!-- filtertype fc gain quailty enable -->
+      <param name="BQ1" value="1,500,1,0.6,1"/>
+      <param name="BQ2" value="1,1000,1,0.6,1"/>
+    </param_unit>
+    <param_unit param_id="1">
+      <param name="diff_param" value="0"/>
+      <param name="channels" value="2"/>
+      <param name="bin_num" value="5"/>
+      <param name="samplerate" value="48000"/>
+      <param name="BQ1" value="1,125,3,0.5,1"/>
+      <param name="BQ2" value="1,500,-1,2,1"/>
+      <param name="BQ3" value="1,1000,-1,2,1"/>
+      <param name="BQ4" value="1,4000,-1,1,1"/>
+      <param name="BQ5" value="2,16000,3,1,1"/>
+    </param_unit>
+    <param_unit param_id="2">
+      <param name="diff_param" value="0"/>
+      <param name="channels" value="2"/>
+      <param name="bin_num" value="5"/>
+      <param name="samplerate" value="48000"/>
+      <param name="BQ1" value="1,125,3,2,1"/>
+      <param name="BQ2" value="1,500,-3,2,1"/>
+      <param name="BQ3" value="1,1000,3,2,1"/>
+      <param name="BQ4" value="1,4000,-3,2,1"/>
+      <param name="BQ5" value="2,16000,2,1,1"/>
+    </param_unit>
+    <param_unit param_id="3">
+      <param name="diff_param" value="0"/>
+      <param name="channels" value="2"/>
+      <param name="bin_num" value="5"/>
+      <param name="samplerate" value="48000"/>
+      <param name="BQ1" value="1,125,-1,1,1"/>
+      <param name="BQ2" value="1,500,-3,1,1"/>
+      <param name="BQ3" value="1,1000,-3,1,1"/>
+      <param name="BQ4" value="1,4000,2,2,1"/>
+      <param name="BQ5" value="2,16000,2,1,1"/>
+    </param_unit>
+    <param_unit param_id="4">
+      <param name="diff_param" value="0"/>
+      <param name="channels" value="2"/>
+      <param name="bin_num" value="5"/>
+      <param name="samplerate" value="48000"/>
+      <param name="BQ1" value="1,125,4,0.5,1"/>
+      <param name="BQ2" value="1,500,-1,2,1"/>
+      <param name="BQ3" value="1,1000,3,1,1"/>
+      <param name="BQ4" value="1,4000,-1,2,1"/>
+      <param name="BQ5" value="2,16000,2,1,1"/>
+    </param_unit>
+    <param_unit param_id="5">
+      <param name="diff_param" value="0"/>
+      <param name="channels" value="2"/>
+      <param name="bin_num" value="5"/>
+      <param name="samplerate" value="48000"/>
+      <param name="BQ1" value="1,125,3,2,1"/>
+      <param name="BQ2" value="1,500,-3,2,1"/>
+      <param name="BQ3" value="1,1000,-1,2,1"/>
+      <param name="BQ4" value="1,4000,1,2,1"/>
+      <param name="BQ5" value="2,16000,2,1,1"/>
+    </param_unit>
+    <param_unit param_id="6">
+      <!-- set "1" then use diffrent param per channel -->
+      <param name="diff_param" value="1"/>
+      <param name="channels" value="2"/>
+      <param name="samplerate" value="48000"/>
+      <param name="0_bin_num" value="2"/>
+      <param name="0_BQ1" value="1,500,1,0.6,1"/>
+      <param name="0_BQ2" value="1,700,1,0.6,1"/>
+      <param name="1_bin_num" value="3"/>
+      <param name="1_BQ1" value="1,400,1,0.6,1"/>
+      <param name="1_BQ2" value="1,500,1,0.6,1"/>
+      <param name="1_BQ3" value="1,700,1,0.6,1"/>
+    </param_unit>
+  </param_unit_pool>
+</audio_rp_eq_param>

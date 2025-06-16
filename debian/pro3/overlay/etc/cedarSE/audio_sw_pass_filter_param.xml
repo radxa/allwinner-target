@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audio_sw_pass_filter_param version="2.10.0-later">
+  <param_tree>
+    <param path="Speaker" param_id="0" enable="0"/>
+    <param path="MIC"     param_id="1" enable="0"/>
+  </param_tree>
+  <param_unit_pool>
+    <param_unit param_id="0">
+      <!-- hpf_type/lpf_type-value: "butterworth", "linkwitz_riley", "bessel", "null" -->
+      <param name="hpf_type" value="butterworth"/>
+      <param name="lpf_type" value="butterworth"/>
+      <param name="ch_cnt" value="2"/>
+      <param name="hpf_slope_0" value="6"/>
+      <param name="hpf_slope_1" value="6"/>
+      <param name="hpf_freq_0" value="50"/>
+      <param name="hpf_freq_1" value="50"/>
+      <param name="lpf_slope_0" value="48"/>
+      <param name="lpf_slope_1" value="48"/>
+      <param name="lpf_freq_0" value="23000"/>
+      <param name="lpf_freq_1" value="23000"/>
+    </param_unit>
+    <param_unit param_id="1">
+      <param name="hpf_type" value="butterworth"/>
+      <param name="lpf_type" value="butterworth"/>
+      <param name="ch_cnt" value="2"/>
+      <param name="hpf_slope_0" value="6"/>
+      <param name="hpf_slope_1" value="6"/>
+      <param name="hpf_freq_0" value="100"/>
+      <param name="hpf_freq_1" value="100"/>
+      <param name="lpf_slope_0" value="48"/>
+      <param name="lpf_slope_1" value="48"/>
+      <param name="lpf_freq_0" value="20000"/>
+      <param name="lpf_freq_1" value="20000"/>
+    </param_unit>
+  </param_unit_pool>
+</audio_sw_pass_filter_param>
