@@ -1,0 +1,19 @@
+[Unit]
+Description=First-boot setup for radxa user
+After=network.target
+ConditionPathExists=!/var/lib/radxa-firstboot.done
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c '\
+    useradd -m -G sudo -s /bin/bash radxa && \
+    echo "radxa:radxa" | chpasswd && \
+    mkdir -p /etc/lightdm/lightdm.conf.d && \
+    echo "[Seat:*]\nautologin-user=radxa" > /etc/lightdm/lightdm.conf && \
+    sed -i "/radxa-config.service/d" /etc/rc.local && \
+    touch /var/lib/radxa-firstboot.done'
+ExecStartPost=/bin/systemctl disable radxa-config.service
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

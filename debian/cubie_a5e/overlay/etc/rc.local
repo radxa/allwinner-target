@@ -17,7 +17,8 @@ then
     systemctl stop ssh.socket||true
     dpkg-reconfigure openssh-server
 fi
-/etc/config.sh &
+systemctl enable radxa-config.service
+systemctl start radxa-config.service
 echo off > /sys/class/drm/card0-DSI-1/status
 hciattach -s 1500000 /dev/ttyAS1 any 1500000 noflow nosleep
 sudo systemctl restart lightdm.service
